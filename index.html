@@ -4,30 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="manifest" href="manifest.json">
-  <title>Ma PWA</title>
+  <title>Abeille - Ma PWA</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Bienvenue sur Abeille 🐝</h1>
-  <p>Une plateforme moderne pour partager du contenu facilement.</p>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
+  </nav>
 
-  <button id="installButton" hidden>Installer l'App</button>
+  <main>
+    <h1>Bienvenue sur Abeille 🐝</h1>
+    <p>Une plateforme moderne pour partager et explorer du contenu facilement.</p>
+    
+    <!-- Bouton pour installer l'application (fonctionnalité PWA) -->
+    <button id="installButton" hidden>Installer l'App</button>
+
+    <!-- Bouton d'appel à l'action pour acheter le produit -->
+    <p>
+      <a class="cta" href="https://gumroad.com/ton-produit" target="_blank">Acheter Maintenant</a>
+    </p>
+  </main>
 
   <script>
-      // Gestion de l'installation PWA
-      let installPrompt;
-      const installButton = document.getElementById("installButton");
+    // Gestion de l'installation PWA
+    let installPrompt;
+    const installButton = document.getElementById("installButton");
 
-      window.addEventListener("beforeinstallprompt", (event) => {
-          event.preventDefault();
-          installPrompt = event;
-          installButton.hidden = false;
-      });
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault();
+      installPrompt = event;
+      installButton.hidden = false;
+    });
 
-      installButton.addEventListener("click", () => {
-          installPrompt.prompt();
-      });
+    installButton.addEventListener("click", () => {
+      installPrompt.prompt();
+    });
   </script>
 </body>
-
 </html>
