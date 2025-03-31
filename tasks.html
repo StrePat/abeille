@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion de Tâches - Abeille</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="tasks.html">Tâches</a>
+    <a href="about.html">À propos</a>
+  </nav>
+  <main>
+    <h1>Gestion de Tâches</h1>
+    <!-- Formulaire avec champ texte et date -->
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="Ajouter une nouvelle tâche" required>
+      <input type="date" id="taskDate" required>
+      <button type="submit">Ajouter</button>
+    </form>
+    <!-- Liste des tâches -->
+    <ul id="taskList"></ul>
+  </main>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
